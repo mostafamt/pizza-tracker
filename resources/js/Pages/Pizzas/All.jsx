@@ -4,7 +4,8 @@ import { Head } from "@inertiajs/react";
 
 const columns = [
     'size',
-    'status'
+    'chef',
+    'status',
 ];
 
 const All = ({ auth, pizzas }) => {

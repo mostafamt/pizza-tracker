@@ -12,11 +12,24 @@ class Pizza extends Model
 
     protected $casts = [
         'toppings' => 'array',
+    ];
 
+    protected $hidden = [
+        'user'
+    ];
+
+    protected $appends = [
+        'chef',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getChefAttribute()
+    {
+        return $this->user->name;
+    }
+
 }
